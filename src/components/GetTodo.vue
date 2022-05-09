@@ -1,12 +1,7 @@
 <template>
   <div id="get-todo" class="container">
-    <input
-      class="form-control"
-      :value="newTodo"
-      @change="getTodo"
-      placeholder="I need to..."
-    />
-    <button class="btn btn-primary" @click="addTodo">Add Todo</button>
+    <input :value="newTodo" @change="getTodo" placeholder="I need to..." />
+    <button class="btn3" @click="addTodo">Add Todo</button>
   </div>
 </template>
 <script>
@@ -27,3 +22,8 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+.btn3 {
+  background-color: rgb(0, 255, 234);
+}
+</style>
