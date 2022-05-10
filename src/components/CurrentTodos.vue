@@ -1,18 +1,30 @@
 <template>
   <div id="current-todos" class="container">
     <h3 v-if="todos.length > 0">Current({{ todos.length }})</h3>
-    <ul class="list">
-      <li class="listItem" v-for="todo in todos" v-bind:key="todo.id">
+    <ul class="current-todos--list">
+      <li
+        class="current-todos--listItem"
+        v-for="todo in todos"
+        v-bind:key="todo.id"
+      >
         {{ todo.body }}
-        <div class="btnGroup">
-          <button type="button" @click="edit(todo)" class="btn">
-            <span class="edit"></span> Edit
+        <div class="current-todos--btnGroup">
+          <button type="button" @click="edit(todo)" class="current-todos--btn">
+            Edit
           </button>
-          <button type="button" @click="complete(todo)" class="btn1">
-            <span class="complete"></span> Complete
+          <button
+            type="button"
+            @click="complete(todo)"
+            class="current-todos--btn1"
+          >
+            Complete
           </button>
-          <button type="button" @click="remove(todo)" class="btn2">
-            <span class="remove"></span> Remove
+          <button
+            type="button"
+            @click="remove(todo)"
+            class="current-todos--btn2"
+          >
+            Remove
           </button>
         </div>
       </li>
@@ -40,25 +52,22 @@ export default {
 };
 </script>
 <style lang="scss">
-.btnGroup {
-  float: right;
+li.current-todos--listItem {
+  list-style-type: circle;
 }
-.btn {
-  background-color: yellow;
+.current-todos--btn {
+  background-color: #ffff00;
 }
-.btn1 {
-  background-color: green;
+.current-todos--btn1 {
+  background-color: #008000;
 }
-.btn2 {
-  background-color: red;
+.current-todos--btn2 {
+  background-color: #ff0000;
 }
-.list {
-  display: block;
-  list-style-type: disc;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  padding-inline-start: 40px;
+
+.current-todos--listItem {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
 }
 </style>
