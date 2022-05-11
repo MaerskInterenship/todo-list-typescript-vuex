@@ -1,18 +1,26 @@
 <template>
   <div id="current-todos" class="container">
     <h3 v-if="todos.length > 0">Current({{ todos.length }})</h3>
-    <ul class="list">
-      <li class="listItem" v-for="todo in todos" v-bind:key="todo.id">
+    <ul class="todos__list--current">
+      <li class="todos__list-item" v-for="todo in todos" v-bind:key="todo.id">
         {{ todo.body }}
-        <div class="btnGroup">
-          <button type="button" @click="edit(todo)" class="btn">
-            <span class="edit"></span> Edit
+        <div class="todos-actions">
+          <button type="button" @click="edit(todo)" class="todos-actions--edit">
+            Edit
           </button>
-          <button type="button" @click="complete(todo)" class="btn1">
-            <span class="complete"></span> Complete
+          <button
+            type="button"
+            @click="complete(todo)"
+            class="todos-actions--complete"
+          >
+            Complete
           </button>
-          <button type="button" @click="remove(todo)" class="btn2">
-            <span class="remove"></span> Remove
+          <button
+            type="button"
+            @click="remove(todo)"
+            class="todos-actions--remove"
+          >
+            Remove
           </button>
         </div>
       </li>
@@ -40,25 +48,21 @@ export default {
 };
 </script>
 <style lang="scss">
-.btnGroup {
-  float: right;
+.todos__list-item {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
 }
-.btn {
-  background-color: yellow;
-}
-.btn1 {
-  background-color: green;
-}
-.btn2 {
-  background-color: red;
-}
-.list {
-  display: block;
-  list-style-type: disc;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  padding-inline-start: 40px;
+
+.todos-actions {
+  &--edit {
+    background-color: #ffff00;
+  }
+  &--complete {
+    background-color: #008000;
+  }
+  &--remove {
+    background-color: #ff0000;
+  }
 }
 </style>
