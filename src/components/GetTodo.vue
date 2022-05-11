@@ -1,7 +1,7 @@
 <template>
   <div id="get-todo" class="container">
     <input :value="newTodo" @change="getTodo" placeholder="I need to..." />
-    <button class="get-todo--btn3" @click="addTodo">Add Todo</button>
+    <button class="todo__actions--add" @click="addTodo">Add Todo</button>
   </div>
 </template>
 <script>
@@ -23,7 +23,7 @@ export default {
 };
 </script>
 <style lang="scss">
-.get-todo--btn3 {
+.todo__actions--add {
   background-color: #00ffff;
 }
 </style>
